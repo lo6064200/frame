@@ -57,7 +57,7 @@ class Boot{
             //dd($info);
             //定义常量
             //用于组合路径
-            define('MODUTE',$info[0]);
+            define('MODULE',$info[0]);
             define('CONTROLLER',$info[1]);
             define('ACTION',$info[2]);
         }else{//地址栏没有s参数，需要给默认值
@@ -74,7 +74,7 @@ class Boot{
         }
         //实例化$class的类
         //调用$action[]的方法,输出对象
-        echo call_user_func_array([new $class,$action],[]);
+        echo call_user_func_array ( [ new $class , $action ] , [] );
         //(new $class）->$action();
     }
     /**

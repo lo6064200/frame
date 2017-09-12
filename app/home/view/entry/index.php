@@ -26,7 +26,5 @@
         </p>
     </div>
 </div>
-<hr>
-<?php echo $test; ?>
 </body>
 </html>

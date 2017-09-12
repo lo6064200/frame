@@ -36,6 +36,25 @@ if(!function_exists ('dd')){
         echo '</pre>';
     }
 }
+if(!function_exists ('dt')){
+    /**
+     * 打印函数
+     */
+    function dt($var){
+        echo '<pre style="background: #ccc;padding: 8px;border-radius: 5px">';
+        //print_r打印函数，不显示数据类型
+        //print_r不能打印null，boolen
+        if(is_null ($var)){
+            var_dump ($var);
+        }elseif(is_bool ($var)){
+            var_dump ($var);
+        }else{
+            print_r ($var) ;
+        }
+        echo '</pre>';
+        exit;
+    }
+}
 if(!function_exists ('c')){
     /**
      * 读取配置项的c函数
@@ -58,6 +77,42 @@ if(!function_exists ('c')){
         return isset($data[$info[1]]) ? $data[$info[1]] : null;
     }
 }
-
-
-
+if(!function_exists ('u')) {
+    /**
+     * 读取配置项的c函数
+     * @param $var
+     *
+     * @return null
+     */
+    if(!function_exists ('u')){
+        /**
+         * 跳转的u函数
+         * //?s=模块/控制器/方法
+         */
+        function u($url,$args = []){
+            //p($args);
+            //dd(http_build_query ($args));
+            //http_build_query将数组['aid'=1,'bid'=2]变成 aid=1&bid=2
+            $args = http_build_query ($args);
+            $info = explode ('.',$url);
+            //dd($info);
+            if(!$args){
+                if(count ($info)==2){
+                    return "index.php?s=".MODULE."/{$info[0]}/{$info[1]}";
+                }
+                if(count ($info)==1){
+                    return "index.php?s=".MODULE."/".CONTROLLER."/{$info[0]}";
+                }
+                return "index.php?s={$info[0]}/{$info[1]}/{$info[2]}";
+            }else {
+                if (count($info) == 2) {
+                    return "index.php?s=" . MODULE . "/{$info[0]}/{$info[1]}" . "&{$args}";
+                }
+                if (count($info) == 1) {
+                    return "index.php?s=" . MODULE . "/" . CONTROLLER . "/{$info[0]}" . "&{$args}";
+                }
+                return "index.php?s={$info[0]}/{$info[1]}/{$info[2]}" . "&{$args}";
+            }
+        }
+    }
+}

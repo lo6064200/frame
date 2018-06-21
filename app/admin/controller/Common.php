@@ -19,7 +19,8 @@ class Common extends Controller
         //如果没有就执行以下代码
         if (!isset($_SESSION['id'])){
             //强制跳转到登录界面
-            header('location:?s=admin/login/index');die;
+            header('location:?s=admin/login/index');
+            die;
         }
     }
 }

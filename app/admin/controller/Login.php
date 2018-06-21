@@ -9,7 +9,6 @@
 namespace app\admin\controller;
 
 use houdunwang\core\Controller;
-use houdunwang\model\Model;
 use houdunwang\view\View;
 use Gregwar\Captcha\CaptchaBuilder;
 use Gregwar\Captcha\PhraseBuilder;

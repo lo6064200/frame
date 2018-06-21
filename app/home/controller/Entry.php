@@ -11,6 +11,7 @@ use houdunwang\view\View;
 //1,因为在方位不存在的方法是要用到这个路径下和这个命名空间下的Article里面的方法，所以在这里需要使用use加载它的命名空间
 //2,composer.json已结加载了目录路径
 use system\model\Article;
+use system\model\Student;
 
 class Entry extends Controller
 {
@@ -69,7 +70,12 @@ class Entry extends Controller
         //$data = Article::order('id');
         //1,输出这个排序好的数组
         //dd($data);
-        return View::make ();
+        //执行多表查询，获得多数据表的内容
+        $data = Student::query ( "select * from student s join grade g on s.gid=g.gid join material m on s.mid=m.mid" );
+        //dd($data);
+        //调用页面
+        return View::make ()->with ( compact ( 'data' ) );
+        //return View::make ();
         //$sql='1111111';
         //dd($sql);
 

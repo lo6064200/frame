@@ -21,10 +21,10 @@
     <div class="container">
         <h1><?php echo $message;?></h1>
         <p>
-            <a href="javascript:<?php echo $this->url?>;"><span id="time">3</span>秒之后自动跳转，如果没有跳转请点击</a>
+            <a href="javascript:<?php echo $this->url ?>;"><span id="time">3</span>秒之后自动跳转，如果没有跳转请点击</a>
         </p>
         <p>
-            <a href="http://www.baidu.com" class="btn btn-primary btn-lg">点我测试</a>
+            <a href="<?php echo "index.php" ?>" class="btn btn-primary btn-lg">返回首页</a>
         </p>
     </div>
 </div>

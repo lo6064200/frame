@@ -54,7 +54,8 @@ class Entry extends Common
         //删除session文件
         session_destroy ();
         //成功提示
-        header ('location:?s=admin/login/index');
+        header ('location:index.php');
+        //header ('location:?s=admin/login/index');
         //$this->success ('退出成功','?c=index&a=login');
     }
 }

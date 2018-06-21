@@ -267,7 +267,7 @@ class Base
             //执行sql语句
             return $this->exec ( $sql );
         } else {
-            dd($pk);
+            //dd($pk);
             //测试是否访问到了这里
             // dd(1);
             //1，如果where和主键值都为空，让他返回false

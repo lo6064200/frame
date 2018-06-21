@@ -12,7 +12,7 @@
         <!-- TAB NAVIGATION -->
         <!-- TAB NAVIGATION -->
         <ul class="nav nav-tabs" role="tablist">
-            <li ><a href="<?php echo u('index')?>" >班级列表</a></li>
+            <li ><a href="<?php echo u('Index.class')?>" >班级列表</a></li>
             <li class="active"><a href="<?php echo u('add')?>" >班级添加</a></li>
         </ul>
         <form action="" method="POST" class="form-horizontal" role="form">

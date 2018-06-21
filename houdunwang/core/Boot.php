@@ -65,12 +65,12 @@ class Boot{
             $class = "\app\home\controller\Entry";
             //获取数组里的index方法
             //用于具体制定访问地址
-            $action = 'index';
+            $action = 'Index.class';
             //定义常量
             //用于组合路径
             define('MODULE','home');
             define('CONTROLLER','entry');
-            define('ACTION','index');
+            define('ACTION', 'Index.class');
         }
         //实例化$class的类
         //调用$action[]的方法,输出对象
